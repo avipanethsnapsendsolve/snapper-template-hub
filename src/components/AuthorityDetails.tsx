@@ -34,7 +34,7 @@ function DetailRow({ label, enabled }: DetailRowProps) {
 export function AuthorityDetails() {
   return (
     <div className="w-full flex flex-col">
-      <div className="sticky top-12 z-40 bg-white border-b border-zinc-200 shadow-sm">
+      <div className="fixed top-12 left-56 right-0 z-40 bg-white border-b border-zinc-200 shadow-sm">
         <div className="max-w-screen-xl mx-auto px-4 py-4 flex items-start justify-between">
           <div>
             <div className="flex items-center">
@@ -65,7 +65,7 @@ export function AuthorityDetails() {
         </div>
       </div>
 
-      <div className="max-w-screen-xl mx-auto px-4 py-6">
+      <div className="max-w-screen-xl mx-auto px-4 pt-36 pb-6">
         <div className="space-y-6">
           <section>
             <h2 className="text-lg font-medium text-zinc-900 mb-3">Cache</h2>
