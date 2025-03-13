@@ -53,21 +53,22 @@ export function TemplateCreateModal() {
     <Dialog open={open} onOpenChange={handleOpenChange}>
       <DialogTrigger asChild>
         <Button 
-          className="bg-snapper-600 hover:bg-snapper-700 text-white transition-colors"
+          className="bg-amber-500 hover:bg-amber-600 text-white transition-colors"
+          size="sm"
         >
-          <Plus className="w-4 h-4 mr-1" /> New template
+          <Plus className="w-4 h-4 mr-1.5" /> New template
         </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[500px] bg-white/90 backdrop-blur-lg border-border animate-fade-in">
+      <DialogContent className="sm:max-w-[500px] bg-white border-zinc-200">
         <DialogHeader>
-          <DialogTitle className="text-xl font-medium">Create New Template</DialogTitle>
-          <DialogDescription className="text-muted-foreground">
+          <DialogTitle className="text-xl font-medium text-zinc-900">Create New Template</DialogTitle>
+          <DialogDescription className="text-zinc-500 text-sm">
             Fill out the form below to create a new message template.
           </DialogDescription>
         </DialogHeader>
         <div className="space-y-4 py-4">
           <div className="space-y-2">
-            <Label htmlFor="name">
+            <Label htmlFor="name" className="text-zinc-700">
               Template Name <span className="text-destructive">*</span>
             </Label>
             <Input
@@ -78,7 +79,7 @@ export function TemplateCreateModal() {
                 if (e.target.value.trim()) setNameError("");
               }}
               placeholder="Enter template name"
-              className={nameError ? "border-destructive" : ""}
+              className={`border-zinc-200 ${nameError ? "border-destructive" : ""}`}
               maxLength={100}
             />
             {nameError && (
@@ -87,16 +88,16 @@ export function TemplateCreateModal() {
           </div>
           
           <div className="space-y-2">
-            <Label htmlFor="content">Template Message</Label>
+            <Label htmlFor="content" className="text-zinc-700">Template Message</Label>
             <Textarea
               id="content"
               value={content}
               onChange={(e) => setContent(e.target.value)}
               placeholder="Enter template content"
-              className="min-h-[150px] resize-y"
+              className="min-h-[150px] resize-y border-zinc-200"
               maxLength={1000}
             />
-            <p className="text-xs text-muted-foreground">
+            <p className="text-xs text-zinc-500 text-right">
               {content.length}/1000 characters
             </p>
           </div>
@@ -106,14 +107,14 @@ export function TemplateCreateModal() {
             type="button" 
             variant="outline" 
             onClick={() => setOpen(false)}
-            className="border-border"
+            className="border-zinc-200 text-zinc-700"
           >
             Cancel
           </Button>
           <Button 
             type="button" 
             onClick={handleCreate}
-            className="bg-snapper-600 hover:bg-snapper-700 text-white transition-colors"
+            className="bg-amber-500 hover:bg-amber-600 text-white transition-colors"
           >
             Create
           </Button>

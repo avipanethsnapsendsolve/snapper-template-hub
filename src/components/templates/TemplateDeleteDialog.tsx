@@ -31,24 +31,25 @@ export function TemplateDeleteDialog() {
       <AlertDialogTrigger asChild>
         <Button
           variant="outline"
-          className="border-destructive/30 text-destructive hover:bg-destructive/10 hover:text-destructive hover:border-destructive transition-colors"
+          className="border-zinc-200 text-zinc-700 hover:bg-zinc-50 hover:text-zinc-900 hover:border-zinc-300"
           disabled={!selectedTemplate}
+          size="sm"
         >
-          <Trash2 className="w-4 h-4 mr-1" /> Remove
+          <Trash2 className="w-4 h-4 mr-1.5" /> Remove
         </Button>
       </AlertDialogTrigger>
-      <AlertDialogContent className="bg-white/95 backdrop-blur-md animate-scale-in">
+      <AlertDialogContent className="bg-white border-zinc-200">
         <AlertDialogHeader>
-          <AlertDialogTitle>Delete Template</AlertDialogTitle>
-          <AlertDialogDescription>
+          <AlertDialogTitle className="text-lg font-medium text-zinc-900">Delete Template</AlertDialogTitle>
+          <AlertDialogDescription className="text-zinc-500 text-sm">
             Are you sure you want to delete the template "{selectedTemplate?.name}"? This action cannot be undone.
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <AlertDialogCancel className="border-border">Cancel</AlertDialogCancel>
+          <AlertDialogCancel className="border-zinc-200 text-zinc-700">Cancel</AlertDialogCancel>
           <AlertDialogAction
             onClick={handleDelete}
-            className="bg-destructive hover:bg-destructive/90 text-destructive-foreground transition-colors"
+            className="bg-destructive hover:bg-destructive/90 text-white"
           >
             Confirm Remove
           </AlertDialogAction>

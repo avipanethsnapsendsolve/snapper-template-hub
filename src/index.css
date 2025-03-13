@@ -107,39 +107,52 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-muted-foreground/30 rounded-full;
+    @apply bg-zinc-300 rounded-full;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-muted-foreground/50;
-  }
-
-  /* Glassmorphism elements */
-  .glass {
-    @apply bg-white/70 backdrop-blur-lg border border-white/20 shadow-sm;
-  }
-
-  .glass-dark {
-    @apply bg-black/70 backdrop-blur-lg border border-white/10 shadow-sm;
+    @apply bg-zinc-400;
   }
 
   /* Text selection */
   ::selection {
-    @apply bg-snapper-200 text-snapper-800;
+    @apply bg-amber-100 text-amber-900;
   }
+}
 
-  /* Custom animations */
-  .animate-in {
-    animation: fadeIn 0.3s ease forwards;
-  }
+/* Template editor specific styles */
+.template-editor {
+  @apply rounded-md border border-zinc-200 bg-white transition-all duration-200;
+}
 
-  .animate-out {
-    animation: fadeOut 0.2s ease forwards;
-  }
+.template-editor:focus-within {
+  @apply shadow-sm border-amber-500 ring-1 ring-amber-500;
+}
 
-  .dynamic-tag {
-    @apply inline-flex items-center justify-center px-2 py-0.5 text-xs font-medium rounded-md bg-snapper-100 text-snapper-800 cursor-pointer hover:bg-snapper-200 transition-colors;
+.character-count {
+  @apply text-xs text-zinc-400 transition-all duration-200;
+}
+
+.character-count.limit-approaching {
+  @apply text-amber-500;
+}
+
+.character-count.limit-reached {
+  @apply text-destructive;
+}
+
+/* Dynamic value insertion animation */
+@keyframes valueInserted {
+  0% {
+    background-color: rgba(245, 158, 11, 0.2);
   }
+  100% {
+    background-color: transparent;
+  }
+}
+
+.value-inserted {
+  animation: valueInserted 1.5s ease-out forwards;
 }
 
 /* Define transitions for page changes */
@@ -161,39 +174,4 @@
 .page-transition-exit-active {
   opacity: 0;
   transition: opacity 300ms;
-}
-
-/* Template editor specific styles */
-.template-editor {
-  @apply rounded-lg border border-border bg-card text-card-foreground shadow-sm transition-all duration-200;
-}
-
-.template-editor:focus-within {
-  @apply shadow-md border-snapper-300;
-}
-
-.character-count {
-  @apply text-xs text-muted-foreground transition-all duration-200;
-}
-
-.character-count.limit-approaching {
-  @apply text-amber-500;
-}
-
-.character-count.limit-reached {
-  @apply text-destructive;
-}
-
-/* Dynamic value insertion animation */
-@keyframes valueInserted {
-  0% {
-    background-color: rgba(79, 70, 229, 0.2);
-  }
-  100% {
-    background-color: transparent;
-  }
-}
-
-.value-inserted {
-  animation: valueInserted 1.5s ease-out forwards;
 }

@@ -21,7 +21,7 @@ const Index = () => {
           <div className="max-w-6xl mx-auto">
             <AuthorityDetails />
             
-            <div className="px-6 pb-6">
+            <div className="px-6 pb-8">
               <h2 className="text-xl font-medium text-zinc-900 mb-4">Message templates</h2>
               <TemplateProvider>
                 <TemplateManager />
@@ -32,6 +32,6 @@ const Index = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Index;

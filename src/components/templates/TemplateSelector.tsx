@@ -1,7 +1,6 @@
 
-import React, { useState } from "react";
-import { MessageTemplate } from "@/types/template";
-import { ChevronDown, Check } from "lucide-react";
+import React from "react";
+import { ChevronDown } from "lucide-react";
 import { 
   Select,
   SelectContent,
@@ -15,7 +14,6 @@ import { useTemplates } from "@/contexts/TemplateContext";
 
 export function TemplateSelector() {
   const { templates, selectedTemplate, setSelectedTemplate } = useTemplates();
-  const [open, setOpen] = useState(false);
 
   const handleSelect = (templateId: string) => {
     const template = templates.find(t => t.id === templateId);
@@ -30,20 +28,20 @@ export function TemplateSelector() {
       onValueChange={handleSelect}
     >
       <SelectTrigger 
-        className="w-full border border-input bg-background rounded-md focus:ring-1 focus:ring-snapper-300 transition-all animate-in"
+        className="w-full h-10 px-3 py-2 text-sm rounded-md border border-zinc-200 focus:ring-amber-500 focus:border-amber-500 shadow-sm bg-white"
       >
         <SelectValue 
           placeholder="No template selected" 
-          className="text-sm text-muted-foreground"
+          className="text-zinc-500"
         />
       </SelectTrigger>
       <SelectContent 
-        className="w-full max-h-[300px] bg-white/95 backdrop-blur-sm border border-border shadow-lg animate-scale-in"
+        className="w-full max-h-[300px] border border-zinc-200 shadow-md rounded-md bg-white"
       >
         <ScrollArea className="h-full max-h-[300px]">
           <SelectGroup>
             {templates.length === 0 ? (
-              <div className="py-6 text-center text-muted-foreground">
+              <div className="py-6 text-center text-zinc-500">
                 <p>No templates available</p>
               </div>
             ) : (
@@ -51,7 +49,7 @@ export function TemplateSelector() {
                 <SelectItem 
                   key={template.id} 
                   value={template.id}
-                  className="py-2.5 px-3 cursor-pointer text-sm data-[state=checked]:bg-snapper-50 data-[state=checked]:text-snapper-900 data-[highlighted]:bg-snapper-50 data-[highlighted]:text-snapper-900 rounded-sm my-0.5 transition-colors"
+                  className="py-2.5 px-3 cursor-pointer text-sm text-zinc-800 data-[state=checked]:bg-amber-50 data-[state=checked]:text-amber-900 data-[highlighted]:bg-amber-50 data-[highlighted]:text-amber-900 rounded-sm my-0.5 transition-colors"
                 >
                   {template.name}
                 </SelectItem>
