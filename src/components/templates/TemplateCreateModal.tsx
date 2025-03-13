@@ -1,0 +1,124 @@
+
+import React, { useState } from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { Plus } from "lucide-react";
+import { useTemplates } from "@/contexts/TemplateContext";
+
+export function TemplateCreateModal() {
+  const { createTemplate } = useTemplates();
+  const [open, setOpen] = useState(false);
+  const [name, setName] = useState("");
+  const [content, setContent] = useState("");
+  const [nameError, setNameError] = useState("");
+  
+  const handleOpenChange = (open: boolean) => {
+    setOpen(open);
+    if (!open) {
+      resetForm();
+    }
+  };
+  
+  const resetForm = () => {
+    setName("");
+    setContent("");
+    setNameError("");
+  };
+  
+  const handleCreate = () => {
+    // Validate
+    if (!name.trim()) {
+      setNameError("Template name required");
+      return;
+    }
+    
+    // Create template
+    createTemplate(name.trim(), content.trim());
+    setOpen(false);
+    resetForm();
+  };
+  
+  return (
+    <Dialog open={open} onOpenChange={handleOpenChange}>
+      <DialogTrigger asChild>
+        <Button 
+          className="bg-snapper-600 hover:bg-snapper-700 text-white transition-colors"
+        >
+          <Plus className="w-4 h-4 mr-1" /> New template
+        </Button>
+      </DialogTrigger>
+      <DialogContent className="sm:max-w-[500px] bg-white/90 backdrop-blur-lg border-border animate-fade-in">
+        <DialogHeader>
+          <DialogTitle className="text-xl font-medium">Create New Template</DialogTitle>
+          <DialogDescription className="text-muted-foreground">
+            Fill out the form below to create a new message template.
+          </DialogDescription>
+        </DialogHeader>
+        <div className="space-y-4 py-4">
+          <div className="space-y-2">
+            <Label htmlFor="name">
+              Template Name <span className="text-destructive">*</span>
+            </Label>
+            <Input
+              id="name"
+              value={name}
+              onChange={(e) => {
+                setName(e.target.value);
+                if (e.target.value.trim()) setNameError("");
+              }}
+              placeholder="Enter template name"
+              className={nameError ? "border-destructive" : ""}
+              maxLength={100}
+            />
+            {nameError && (
+              <p className="text-destructive text-sm">{nameError}</p>
+            )}
+          </div>
+          
+          <div className="space-y-2">
+            <Label htmlFor="content">Template Message</Label>
+            <Textarea
+              id="content"
+              value={content}
+              onChange={(e) => setContent(e.target.value)}
+              placeholder="Enter template content"
+              className="min-h-[150px] resize-y"
+              maxLength={1000}
+            />
+            <p className="text-xs text-muted-foreground">
+              {content.length}/1000 characters
+            </p>
+          </div>
+        </div>
+        <DialogFooter>
+          <Button 
+            type="button" 
+            variant="outline" 
+            onClick={() => setOpen(false)}
+            className="border-border"
+          >
+            Cancel
+          </Button>
+          <Button 
+            type="button" 
+            onClick={handleCreate}
+            className="bg-snapper-600 hover:bg-snapper-700 text-white transition-colors"
+          >
+            Create
+          </Button>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
+  );
+}
