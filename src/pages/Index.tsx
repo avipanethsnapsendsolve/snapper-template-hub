@@ -24,7 +24,7 @@ const Index = () => {
       
       <Navigation />
       
-      <div className="flex-1 flex flex-col ml-56 pt-12">
+      <div className="flex-1 flex flex-col ml-56 pt-12 h-screen overflow-hidden">
         <main className="flex-1 overflow-auto">
           <AuthorityDetails />
         </main>
