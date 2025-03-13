@@ -2,7 +2,6 @@
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Save } from "lucide-react";
 import { TemplateProvider } from "@/contexts/TemplateContext";
 import { TemplateManager } from "./templates/TemplateManager";
 
@@ -14,14 +13,14 @@ interface DetailRowProps {
 function DetailRow({ label, enabled }: DetailRowProps) {
   return (
     <div className="grid grid-cols-3 py-4 border-b border-zinc-100">
-      <div className="text-sm font-medium text-zinc-700">{label}</div>
+      <div className="text-sm font-medium text-zinc-700 px-4">{label}</div>
       <div className="text-sm text-zinc-700">
         <div className="flex items-center">
           <span className="w-2 h-2 rounded-full bg-green-500 mr-2"></span>
           <span>Enabled</span>
         </div>
       </div>
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between px-4">
         <div className="text-sm font-medium text-zinc-700">Primary colour</div>
         <div className="flex items-center">
           <span className="w-2 h-2 rounded-full bg-green-500 mr-2"></span>
@@ -35,7 +34,7 @@ function DetailRow({ label, enabled }: DetailRowProps) {
 export function AuthorityDetails() {
   return (
     <div className="w-full">
-      <div className="border-b border-zinc-200 bg-white">
+      <div className="sticky top-0 z-10 border-b border-zinc-200 bg-white shadow-sm">
         <div className="max-w-screen-xl mx-auto px-4 py-4 flex items-start justify-between">
           <div>
             <div className="flex items-center">

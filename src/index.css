@@ -183,5 +183,5 @@
 
 /* Dynamic value tags */
 .dynamic-tag {
-  @apply bg-zinc-100 hover:bg-zinc-200 px-2 py-1 text-xs rounded text-zinc-700 transition-colors;
+  @apply bg-zinc-100 hover:bg-zinc-200 px-2 py-1 text-xs rounded text-zinc-700 transition-colors font-normal;
 }

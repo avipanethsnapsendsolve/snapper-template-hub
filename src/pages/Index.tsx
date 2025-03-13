@@ -2,7 +2,6 @@
 import React from "react";
 import { Navigation } from "@/components/Navigation";
 import { AuthorityDetails } from "@/components/AuthorityDetails";
-import { TemplateManager } from "@/components/templates/TemplateManager";
 import { TemplateProvider } from "@/contexts/TemplateContext";
 
 const Index = () => {
@@ -19,9 +18,7 @@ const Index = () => {
         </header>
         
         <main className="flex-1 overflow-auto">
-          <div className="max-w-full mx-auto">
-            <AuthorityDetails />
-          </div>
+          <AuthorityDetails />
         </main>
       </div>
     </div>

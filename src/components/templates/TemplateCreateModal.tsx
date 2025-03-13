@@ -13,7 +13,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Plus } from "lucide-react";
 import { useTemplates } from "@/contexts/TemplateContext";
 
 export function TemplateCreateModal() {
@@ -53,10 +52,11 @@ export function TemplateCreateModal() {
     <Dialog open={open} onOpenChange={handleOpenChange}>
       <DialogTrigger asChild>
         <Button 
-          className="bg-orange-500 hover:bg-orange-600 text-white text-sm font-medium rounded"
+          variant="outline"
+          className="border-zinc-200 text-zinc-700 hover:bg-zinc-50 hover:text-zinc-900 hover:border-zinc-300 text-sm font-medium rounded"
           size="sm"
         >
-          <Plus className="w-4 h-4 mr-1.5" /> New template
+          New template
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[500px] bg-white border-zinc-200">

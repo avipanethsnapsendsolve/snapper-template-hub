@@ -8,7 +8,6 @@ import {
 } from "@/components/ui/tooltip";
 import { Info } from "lucide-react";
 import { useTemplates } from "@/contexts/TemplateContext";
-import { DynamicValueType } from "@/types/template";
 import { dynamicValues } from "@/utils/templateUtils";
 
 export function DynamicValueToolbar() {
@@ -41,7 +40,7 @@ export function DynamicValueToolbar() {
             key={value.type}
             type="button"
             onClick={() => insertDynamicValue(value.type)}
-            className="text-xs bg-zinc-100 hover:bg-zinc-200 transition-colors px-2 py-1 rounded text-zinc-700"
+            className="text-xs bg-zinc-100 hover:bg-zinc-200 transition-colors px-2 py-1 rounded text-zinc-700 font-normal"
           >
             {value.label}
           </button>
