@@ -20,7 +20,7 @@ interface NavigationProps {
 
 export function Navigation({ className }: NavigationProps) {
   return (
-    <div className={cn("h-screen w-56 bg-zinc-50 border-r border-zinc-200 flex flex-col", className)}>
+    <div className={cn("fixed top-0 left-0 h-screen w-56 bg-zinc-50 border-r border-zinc-200 flex flex-col z-40", className)}>
       <div className="p-4 flex items-center space-x-2 bg-zinc-900 text-white">
         <div className="text-white/80">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -31,7 +31,7 @@ export function Navigation({ className }: NavigationProps) {
         <div className="text-sm font-medium">City of Hobsons Bay</div>
       </div>
       
-      <nav className="flex-1 p-2">
+      <nav className="flex-1 p-2 overflow-y-auto">
         <ul className="space-y-1">
           <NavItem icon={<FileText size={16} />} label="Authorities" active />
           <NavItem icon={<ClipboardList size={16} />} label="Reports" />

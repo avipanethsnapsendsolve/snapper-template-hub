@@ -9,8 +9,8 @@ const Index = () => {
     <div className="flex min-h-screen bg-zinc-50">
       <Navigation />
       
-      <div className="flex-1 flex flex-col">
-        <header className="bg-zinc-900 text-white px-4 py-3 flex justify-between items-center">
+      <div className="flex-1 flex flex-col ml-56">
+        <header className="sticky top-0 bg-zinc-900 text-white px-4 py-3 flex justify-between items-center z-50">
           <h1 className="text-sm font-medium">City of Hobsons Bay</h1>
           <div className="w-8 h-8 rounded-full bg-orange-500 flex items-center justify-center text-xs font-medium">
             CS
