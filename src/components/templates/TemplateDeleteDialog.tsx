@@ -31,7 +31,7 @@ export function TemplateDeleteDialog() {
       <AlertDialogTrigger asChild>
         <Button
           variant="outline"
-          className="border-zinc-200 text-zinc-700 hover:bg-zinc-50 hover:text-zinc-900 hover:border-zinc-300"
+          className="border-zinc-200 text-zinc-700 hover:bg-zinc-50 hover:text-zinc-900 hover:border-zinc-300 rounded"
           disabled={!selectedTemplate}
           size="sm"
         >

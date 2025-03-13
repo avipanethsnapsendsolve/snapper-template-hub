@@ -28,7 +28,7 @@ export function TemplateSelector() {
       onValueChange={handleSelect}
     >
       <SelectTrigger 
-        className="w-full h-10 px-3 py-2 text-sm rounded-md border border-zinc-200 focus:ring-amber-500 focus:border-amber-500 shadow-sm bg-white"
+        className="w-64 h-9 px-3 py-2 text-sm rounded border border-zinc-200 focus:ring-orange-500 focus:border-orange-500 shadow-sm bg-white"
       >
         <SelectValue 
           placeholder="No template selected" 
@@ -36,7 +36,7 @@ export function TemplateSelector() {
         />
       </SelectTrigger>
       <SelectContent 
-        className="w-full max-h-[300px] border border-zinc-200 shadow-md rounded-md bg-white"
+        className="w-64 max-h-[300px] border border-zinc-200 shadow-md rounded-md bg-white"
       >
         <ScrollArea className="h-full max-h-[300px]">
           <SelectGroup>
@@ -49,7 +49,7 @@ export function TemplateSelector() {
                 <SelectItem 
                   key={template.id} 
                   value={template.id}
-                  className="py-2.5 px-3 cursor-pointer text-sm text-zinc-800 data-[state=checked]:bg-amber-50 data-[state=checked]:text-amber-900 data-[highlighted]:bg-amber-50 data-[highlighted]:text-amber-900 rounded-sm my-0.5 transition-colors"
+                  className="py-2.5 px-3 cursor-pointer text-sm text-zinc-800 data-[state=checked]:bg-orange-50 data-[state=checked]:text-orange-900 data-[highlighted]:bg-orange-50 data-[highlighted]:text-orange-900 rounded-sm my-0.5 transition-colors"
                 >
                   {template.name}
                 </SelectItem>

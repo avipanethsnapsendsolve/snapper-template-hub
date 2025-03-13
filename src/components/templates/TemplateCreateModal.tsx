@@ -53,7 +53,7 @@ export function TemplateCreateModal() {
     <Dialog open={open} onOpenChange={handleOpenChange}>
       <DialogTrigger asChild>
         <Button 
-          className="bg-amber-500 hover:bg-amber-600 text-white transition-colors"
+          className="bg-orange-500 hover:bg-orange-600 text-white text-sm font-medium rounded"
           size="sm"
         >
           <Plus className="w-4 h-4 mr-1.5" /> New template
@@ -61,7 +61,7 @@ export function TemplateCreateModal() {
       </DialogTrigger>
       <DialogContent className="sm:max-w-[500px] bg-white border-zinc-200">
         <DialogHeader>
-          <DialogTitle className="text-xl font-medium text-zinc-900">Create New Template</DialogTitle>
+          <DialogTitle className="text-lg font-medium text-zinc-900">Create New Template</DialogTitle>
           <DialogDescription className="text-zinc-500 text-sm">
             Fill out the form below to create a new message template.
           </DialogDescription>
@@ -114,7 +114,7 @@ export function TemplateCreateModal() {
           <Button 
             type="button" 
             onClick={handleCreate}
-            className="bg-amber-500 hover:bg-amber-600 text-white transition-colors"
+            className="bg-orange-500 hover:bg-orange-600 text-white transition-colors"
           >
             Create
           </Button>

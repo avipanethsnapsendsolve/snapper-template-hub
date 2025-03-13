@@ -44,10 +44,10 @@ export function TemplateEditor({ maxLength = 1000 }: TemplateEditorProps) {
           onChange={handleChange}
           placeholder="Please select a template to edit, or create a new template"
           disabled={!selectedTemplate}
-          className={`min-h-[200px] resize-y rounded-md border ${
+          className={`min-h-[200px] resize-y rounded-md border p-4 ${
             !selectedTemplate ? 'bg-zinc-50 text-zinc-400' : 'bg-white'
           } ${
-            selectedTemplate ? 'focus-visible:ring-amber-500 focus-visible:border-amber-500' : ''
+            selectedTemplate ? 'focus-visible:ring-orange-500 focus-visible:border-orange-500' : ''
           }`}
           maxLength={maxLength}
         />
