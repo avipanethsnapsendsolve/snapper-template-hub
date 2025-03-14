@@ -74,11 +74,13 @@ export function AuthorityDetails() {
             <Card className="border-zinc-200 rounded-lg">
               <CardContent className="p-0">
                 <div className="py-4 px-4 border-b border-zinc-100 flex justify-between items-center">
-                  <div className="text-sm font-medium text-zinc-700 bg-zinc-50 px-3 py-1.5 rounded-sm h-full flex items-center">
-                    Incident types
+                  <div className="bg-zinc-50 py-4 px-4 flex-1 h-full rounded-l-md">
+                    <div className="text-sm font-medium text-zinc-700">
+                      Incident types
+                    </div>
                   </div>
                   <Button 
-                    className="bg-orange-500 hover:bg-orange-600 text-white text-sm font-medium rounded-lg"
+                    className="bg-orange-500 hover:bg-orange-600 text-white text-sm font-medium rounded-lg mr-4"
                     size="sm"
                   >
                     Clear cache
