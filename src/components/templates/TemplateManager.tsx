@@ -24,25 +24,8 @@ export function TemplateManager() {
         <div className="px-4 py-4 flex justify-between items-center">
           <div className="w-full grid grid-cols-12 gap-4">
             <div className="col-span-3 border-r border-zinc-100 pr-4">
-              <div className="text-sm font-medium text-zinc-700 mb-4">Template editor</div>
-            </div>
-            
-            <div className="col-span-9 pl-4">
-              <div className="flex justify-between items-center">
-                <TemplateSelector />
-                <div className="flex space-x-2">
-                  <TemplateCreateModal />
-                  <TemplateDeleteDialog />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      
-        <div className="border-t border-zinc-100">
-          <div className="w-full grid grid-cols-12 gap-4">
-            <div className="col-span-3 border-r border-zinc-100 p-4">
-              <div className="flex items-center">
+              <div className="flex items-center mb-4">
+                <div className="text-sm font-medium text-zinc-700 mr-1">Template editor</div>
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger asChild>
@@ -58,9 +41,25 @@ export function TemplateManager() {
               </div>
             </div>
             
-            <div className="col-span-9 p-4">
-              <TemplateEditor maxLength={1000} />
+            <div className="col-span-9 pl-4">
+              <div className="flex justify-between items-center">
+                <TemplateSelector />
+                <div className="flex space-x-2">
+                  <TemplateCreateModal />
+                  <TemplateDeleteDialog />
+                </div>
+              </div>
             </div>
+          </div>
+        </div>
+      
+        <div className="w-full grid grid-cols-12 gap-4">
+          <div className="col-span-3 border-r border-zinc-100 p-4">
+            {/* Empty div, tooltip moved up next to title */}
+          </div>
+          
+          <div className="col-span-9 p-4">
+            <TemplateEditor maxLength={1000} />
           </div>
         </div>
       </CardContent>
