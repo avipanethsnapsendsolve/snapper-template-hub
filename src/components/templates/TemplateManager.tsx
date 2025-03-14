@@ -23,7 +23,7 @@ export function TemplateManager() {
     <Card className="shadow-sm border-zinc-200 bg-white rounded-lg w-full">
       <CardContent className="p-0">
         <div className="grid grid-cols-12 gap-0">
-          <div className="col-span-3 border-r border-zinc-100 p-4">
+          <div className="col-span-3 border-r border-zinc-100 bg-zinc-50 p-4">
             <div className="flex items-center mb-4">
               <div className="text-sm font-medium text-zinc-700 mr-1">Template editor</div>
               <TooltipProvider>
