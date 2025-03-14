@@ -20,7 +20,7 @@ interface NavigationProps {
 
 export function Navigation({ className }: NavigationProps) {
   return (
-    <div className={cn("fixed top-12 left-0 h-[calc(100vh-48px)] w-56 bg-zinc-50 border-r border-zinc-200 flex flex-col z-40", className)}>
+    <div className={cn("fixed top-12 left-0 h-[calc(100vh-48px)] w-56 bg-sidebar shadow-sm border-r border-zinc-200 flex flex-col z-40", className)}>
       <nav className="flex-1 p-2 overflow-y-auto">
         <ul className="space-y-1">
           <NavItem icon={<FileText size={16} />} label="Authorities" active />
@@ -52,13 +52,13 @@ function NavItem({ icon, label, active }: NavItemProps) {
       <Link
         to="/"
         className={cn(
-          "flex items-center space-x-3 px-3 py-2 rounded-md text-sm transition-colors",
+          "flex items-center space-x-3 px-3 py-2 rounded-md text-sm transition-all",
           active
-            ? "bg-orange-50 text-orange-900 border-l-2 border-orange-500"
-            : "text-zinc-700 hover:bg-zinc-100"
+            ? "bg-orange-50 text-orange-900 font-medium border-l-2 border-orange-500"
+            : "text-zinc-700 hover:bg-zinc-100 hover:text-zinc-900"
         )}
       >
-        <span className={active ? "text-orange-500" : "text-zinc-500"}>{icon}</span>
+        <span className={active ? "text-orange-500" : "text-zinc-500 group-hover:text-zinc-900"}>{icon}</span>
         <span>{label}</span>
       </Link>
     </li>
