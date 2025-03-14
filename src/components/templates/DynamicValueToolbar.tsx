@@ -34,13 +34,13 @@ export function DynamicValueToolbar() {
         </TooltipProvider>
       </div>
       
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-3">
         {dynamicValues.map((value) => (
           <button
             key={value.type}
             type="button"
             onClick={() => insertDynamicValue(value.type)}
-            className="text-xs bg-zinc-100 hover:bg-zinc-200 transition-colors px-2 py-1 rounded text-zinc-700 font-normal"
+            className="text-xs text-black hover:text-zinc-700 transition-colors font-medium"
           >
             {value.label}
           </button>
