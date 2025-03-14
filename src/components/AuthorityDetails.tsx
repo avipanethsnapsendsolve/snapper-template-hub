@@ -70,17 +70,17 @@ export function AuthorityDetails() {
       </div>
 
       <div className="max-w-screen-xl mx-auto px-4 pt-36 pb-6">
-        <div className="bg-white border-2 border-zinc-200 rounded-md p-6 space-y-6">
+        <div className="bg-white border border-zinc-200 rounded-lg p-6 space-y-6">
           <section>
             <h2 className="text-lg font-bagoss text-zinc-900 mb-3">Cache</h2>
-            <Card className="border-zinc-200 rounded-md">
+            <Card className="border-zinc-200 rounded-lg">
               <CardContent className="p-0">
                 <div className="py-4 px-4 border-b border-zinc-100 flex justify-between items-center">
                   <div className="text-sm font-medium text-zinc-700 bg-zinc-100 px-3 py-1.5 rounded-sm">
                     Incident types
                   </div>
                   <Button 
-                    className="bg-orange-500 hover:bg-orange-600 text-black text-sm font-medium rounded-md"
+                    className="bg-orange-500 hover:bg-orange-600 text-black text-sm font-medium rounded-lg"
                     size="sm"
                   >
                     Clear cache
@@ -92,7 +92,7 @@ export function AuthorityDetails() {
 
           <section>
             <h2 className="text-lg font-bagoss text-zinc-900 mb-3">Authority detail</h2>
-            <Card className="border-zinc-200 rounded-md">
+            <Card className="border-zinc-200 rounded-lg">
               <CardContent className="p-0">
                 {Array.from({ length: 2 }).map((_, i) => (
                   <DetailRow key={i} label="Account type" enabled={true} />
@@ -103,7 +103,7 @@ export function AuthorityDetails() {
 
           <section>
             <h2 className="text-lg font-bagoss text-zinc-900 mb-3">Feature configurations</h2>
-            <Card className="border-zinc-200 rounded-md">
+            <Card className="border-zinc-200 rounded-lg">
               <CardContent className="p-0">
                 {Array.from({ length: 6 }).map((_, i) => (
                   <DetailRow key={i} label="Account type" enabled={true} />
@@ -114,7 +114,7 @@ export function AuthorityDetails() {
 
           <section>
             <h2 className="text-lg font-bagoss text-zinc-900 mb-3">Email configurations</h2>
-            <Card className="border-zinc-200 rounded-md">
+            <Card className="border-zinc-200 rounded-lg">
               <CardContent className="p-0">
                 {Array.from({ length: 3 }).map((_, i) => (
                   <DetailRow key={i} label="Account type" enabled={true} />

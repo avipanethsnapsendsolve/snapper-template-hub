@@ -12,7 +12,7 @@ export function TemplateManager() {
   const { saveTemplate, isDirty, selectedTemplate } = useTemplates();
 
   return (
-    <Card className="shadow-sm border-zinc-200 bg-white rounded-md w-full">
+    <Card className="shadow-sm border-zinc-200 bg-white rounded-lg w-full">
       <CardContent className="p-0">
         <div className="px-4 py-4 flex justify-between items-center">
           <div className="w-full grid grid-cols-12 gap-4">
