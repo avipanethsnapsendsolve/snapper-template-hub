@@ -107,6 +107,7 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Bagoss', serif;
+    font-weight: normal;
   }
 
   /* Custom scrollbar */

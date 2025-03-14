@@ -3,8 +3,23 @@ import React from "react";
 import { Navigation } from "@/components/Navigation";
 import { AuthorityDetails } from "@/components/AuthorityDetails";
 import { TemplateProvider } from "@/contexts/TemplateContext";
+import { useFontLoader } from "@/hooks/use-font-loader";
+import { toast } from "@/components/ui/use-toast";
 
 const Index = () => {
+  const { hasError } = useFontLoader("Bagoss");
+  
+  // Show a toast if there was an error loading the font
+  React.useEffect(() => {
+    if (hasError) {
+      toast({
+        title: "Font Loading Issue",
+        description: "The Bagoss font couldn't be loaded. Using fallback font instead.",
+        variant: "destructive",
+      });
+    }
+  }, [hasError]);
+
   return (
     <div className="flex min-h-screen bg-zinc-50">
       <div className="fixed top-0 left-0 right-0 bg-zinc-900 text-white h-12 flex items-center px-4 z-50">
