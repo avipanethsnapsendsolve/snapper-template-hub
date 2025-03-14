@@ -20,7 +20,6 @@ export default {
 		extend: {
 			fontFamily: {
 				sans: ['Work Sans', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
-				bagoss: ['Bagoss', 'serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',

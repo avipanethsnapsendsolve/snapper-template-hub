@@ -1,14 +1,4 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap');
-
-/* Using self-hosted Bagoss font via URL */
-@font-face {
-  font-family: 'Bagoss';
-  src: url('https://snapsendsolve-assets-2023.s3.ap-southeast-2.amazonaws.com/fonts/BagossStandard-Regular.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
 
 @tailwind base;
 @tailwind components;
@@ -106,8 +96,8 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Bagoss', serif;
-    font-weight: normal;
+    font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 700;
   }
 
   /* Custom scrollbar */
