@@ -49,7 +49,7 @@ export function AuthorityDetails() {
                   <line x1="9" y1="21" x2="9" y2="9"></line>
                 </svg>
               </div>
-              <h1 className="text-xl font-bagoss text-zinc-900">Authority Details</h1>
+              <h1 className="text-xl font-bold text-zinc-900">Authority Details</h1>
             </div>
             <p className="text-sm text-zinc-500 mt-1 ml-9">Modify the fields below to update your authority's details.</p>
           </div>
@@ -70,15 +70,15 @@ export function AuthorityDetails() {
 
         <div className="bg-white border border-zinc-200 rounded-lg p-6 space-y-6">
           <section>
-            <h2 className="text-lg font-bagoss text-zinc-900 mb-3">Cache</h2>
+            <h2 className="text-lg font-bold text-zinc-900 mb-3">Cache</h2>
             <Card className="border-zinc-200 rounded-lg">
               <CardContent className="p-0">
                 <div className="py-4 px-4 border-b border-zinc-100 flex justify-between items-center">
-                  <div className="text-sm font-medium text-zinc-700 bg-zinc-100 px-3 py-1.5 rounded-sm">
+                  <div className="text-sm font-medium text-zinc-700 bg-zinc-50 px-3 py-1.5 rounded-sm h-full flex items-center">
                     Incident types
                   </div>
                   <Button 
-                    className="bg-orange-500 hover:bg-orange-600 text-black text-sm font-medium rounded-lg"
+                    className="bg-orange-500 hover:bg-orange-600 text-white text-sm font-medium rounded-lg"
                     size="sm"
                   >
                     Clear cache
@@ -89,7 +89,7 @@ export function AuthorityDetails() {
           </section>
 
           <section>
-            <h2 className="text-lg font-bagoss text-zinc-900 mb-3">Authority detail</h2>
+            <h2 className="text-lg font-bold text-zinc-900 mb-3">Authority detail</h2>
             <Card className="border-zinc-200 rounded-lg">
               <CardContent className="p-0">
                 {Array.from({ length: 2 }).map((_, i) => (
@@ -100,7 +100,7 @@ export function AuthorityDetails() {
           </section>
 
           <section>
-            <h2 className="text-lg font-bagoss text-zinc-900 mb-3">Feature configurations</h2>
+            <h2 className="text-lg font-bold text-zinc-900 mb-3">Feature configurations</h2>
             <Card className="border-zinc-200 rounded-lg">
               <CardContent className="p-0">
                 {Array.from({ length: 6 }).map((_, i) => (
@@ -111,7 +111,7 @@ export function AuthorityDetails() {
           </section>
 
           <section>
-            <h2 className="text-lg font-bagoss text-zinc-900 mb-3">Email configurations</h2>
+            <h2 className="text-lg font-bold text-zinc-900 mb-3">Email configurations</h2>
             <Card className="border-zinc-200 rounded-lg">
               <CardContent className="p-0">
                 {Array.from({ length: 3 }).map((_, i) => (
@@ -122,7 +122,7 @@ export function AuthorityDetails() {
           </section>
 
           <section>
-            <h2 className="text-lg font-bagoss text-zinc-900 mb-3">Message templates</h2>
+            <h2 className="text-lg font-bold text-zinc-900 mb-3">Message templates</h2>
             <TemplateProvider>
               <TemplateManager />
             </TemplateProvider>
