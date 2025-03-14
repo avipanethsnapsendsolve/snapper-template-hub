@@ -7,6 +7,13 @@ import { TemplateEditor } from "./TemplateEditor";
 import { TemplateCreateModal } from "./TemplateCreateModal";
 import { TemplateDeleteDialog } from "./TemplateDeleteDialog";
 import { useTemplates } from "@/contexts/TemplateContext";
+import { Info } from "lucide-react";
+import { 
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger
+} from "@/components/ui/tooltip";
 
 export function TemplateManager() {
   const { saveTemplate, isDirty, selectedTemplate } = useTemplates();
@@ -35,8 +42,19 @@ export function TemplateManager() {
         <div className="border-t border-zinc-100">
           <div className="w-full grid grid-cols-12 gap-4">
             <div className="col-span-3 border-r border-zinc-100 p-4">
-              <div className="text-xs text-zinc-500">
-                Create and edit template messages
+              <div className="flex items-center">
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <button className="inline-flex text-zinc-400 hover:text-zinc-600">
+                        <Info size={16} />
+                      </button>
+                    </TooltipTrigger>
+                    <TooltipContent side="right" className="bg-zinc-800 text-white text-xs">
+                      Create and edit template messages
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
               </div>
             </div>
             
