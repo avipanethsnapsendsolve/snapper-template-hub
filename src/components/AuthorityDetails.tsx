@@ -74,8 +74,8 @@ export function AuthorityDetails() {
             <Card className="border-zinc-200 rounded-lg">
               <CardContent className="p-0">
                 <div className="py-4 px-4 border-b border-zinc-100 flex justify-between items-center">
-                  <div className="bg-zinc-50 py-4 px-4 flex-1 h-full rounded-l-md">
-                    <div className="text-sm font-medium text-zinc-700">
+                  <div className="flex-1 flex items-center">
+                    <div className="bg-zinc-50 py-4 px-4 text-sm font-medium text-zinc-700">
                       Incident types
                     </div>
                   </div>
