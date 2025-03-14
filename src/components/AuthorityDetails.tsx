@@ -13,7 +13,7 @@ interface DetailRowProps {
 function DetailRow({ label, enabled }: DetailRowProps) {
   return (
     <div className="grid grid-cols-3 border-b border-zinc-100">
-      <div className="text-sm font-medium text-zinc-700 px-4 py-4 bg-zinc-100 flex items-center">
+      <div className="text-sm font-medium text-zinc-700 px-4 py-4 bg-zinc-50 flex items-center">
         {label}
       </div>
       <div className="text-sm text-zinc-700 px-4 py-4">
@@ -23,7 +23,7 @@ function DetailRow({ label, enabled }: DetailRowProps) {
         </div>
       </div>
       <div className="flex items-center justify-between px-4 py-4 bg-white">
-        <div className="text-sm font-medium text-zinc-700 bg-zinc-100 px-3 py-1.5 rounded-sm w-full h-full flex items-center">
+        <div className="text-sm font-medium text-zinc-700 bg-zinc-50 px-3 py-1.5 rounded-sm w-full h-full flex items-center">
           Primary colour
         </div>
         <div className="flex items-center">
