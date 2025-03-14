@@ -71,7 +71,7 @@ export function AuthorityDetails() {
 
       <div className="max-w-screen-xl mx-auto px-4 pt-36 pb-6">
         <div className="space-y-6">
-          <section>
+          <section className="bg-white border-2 border-zinc-200 rounded-md p-6">
             <h2 className="text-lg font-bagoss text-zinc-900 mb-3">Cache</h2>
             <Card className="border-zinc-200 rounded-md">
               <CardContent className="p-0">
@@ -90,7 +90,7 @@ export function AuthorityDetails() {
             </Card>
           </section>
 
-          <section>
+          <section className="bg-white border-2 border-zinc-200 rounded-md p-6">
             <h2 className="text-lg font-bagoss text-zinc-900 mb-3">Authority detail</h2>
             <Card className="border-zinc-200 rounded-md">
               <CardContent className="p-0">
@@ -101,7 +101,7 @@ export function AuthorityDetails() {
             </Card>
           </section>
 
-          <section>
+          <section className="bg-white border-2 border-zinc-200 rounded-md p-6">
             <h2 className="text-lg font-bagoss text-zinc-900 mb-3">Feature configurations</h2>
             <Card className="border-zinc-200 rounded-md">
               <CardContent className="p-0">
@@ -112,7 +112,7 @@ export function AuthorityDetails() {
             </Card>
           </section>
 
-          <section>
+          <section className="bg-white border-2 border-zinc-200 rounded-md p-6">
             <h2 className="text-lg font-bagoss text-zinc-900 mb-3">Email configurations</h2>
             <Card className="border-zinc-200 rounded-md">
               <CardContent className="p-0">
@@ -123,7 +123,7 @@ export function AuthorityDetails() {
             </Card>
           </section>
 
-          <section>
+          <section className="bg-white border-2 border-zinc-200 rounded-md p-6">
             <h2 className="text-lg font-bagoss text-zinc-900 mb-3">Message templates</h2>
             <TemplateProvider>
               <TemplateManager />
