@@ -35,8 +35,7 @@ export function TemplateManager() {
         <div className="border-t border-zinc-100">
           <div className="w-full grid grid-cols-12 gap-4">
             <div className="col-span-3 border-r border-zinc-100 p-4">
-              <div className="text-sm font-medium text-zinc-700">Template editor</div>
-              <div className="text-xs text-zinc-500 mt-1">
+              <div className="text-xs text-zinc-500">
                 Create and edit template messages
               </div>
             </div>
