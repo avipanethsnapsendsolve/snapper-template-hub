@@ -74,7 +74,7 @@ export function AuthorityDetails() {
                 <div className="py-4 px-4 border-b border-zinc-100 flex justify-between items-center">
                   <div className="text-sm font-medium text-zinc-700">Incident types</div>
                   <Button 
-                    className="bg-orange-500 hover:bg-orange-600 text-white text-sm font-medium rounded-md"
+                    className="bg-orange-500 hover:bg-orange-600 text-black text-sm font-medium rounded-md"
                     size="sm"
                   >
                     Clear cache
