@@ -19,7 +19,7 @@ function DetailRow({ label, enabled }: DetailRowProps) {
       <div className="text-sm text-zinc-700 px-4 py-4">
         <div className="flex items-center">
           <span className="w-2 h-2 rounded-full bg-green-500 mr-2"></span>
-          <span>Enabled</span>
+          <span className="text-sm">Enabled</span>
         </div>
       </div>
       <div className="flex items-center justify-between px-4 py-4">
