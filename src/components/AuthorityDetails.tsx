@@ -22,8 +22,8 @@ function DetailRow({ label, enabled }: DetailRowProps) {
           <span className="text-sm">Enabled</span>
         </div>
       </div>
-      <div className="flex items-center justify-between px-4 py-4 bg-white">
-        <div className="text-sm font-medium text-zinc-700 bg-zinc-50 px-3 py-1.5 rounded-sm w-full h-full flex items-center">
+      <div className="px-4 py-4 bg-white grid grid-cols-2 gap-4">
+        <div className="text-sm font-medium text-zinc-700 bg-zinc-50 px-3 py-1.5 rounded-sm flex items-center h-full">
           Primary colour
         </div>
         <div className="flex items-center">
