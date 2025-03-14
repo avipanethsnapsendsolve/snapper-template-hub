@@ -35,7 +35,7 @@ export function TemplateDeleteDialog() {
           disabled={!selectedTemplate}
           size="sm"
         >
-          <Trash2 className="w-4 h-4 mr-1.5" /> Remove
+          <Trash2 className="w-4 h-4" />
         </Button>
       </AlertDialogTrigger>
       <AlertDialogContent className="bg-white border-zinc-200">

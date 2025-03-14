@@ -24,8 +24,8 @@ export function TemplateManager() {
               <div className="flex justify-between items-center">
                 <TemplateSelector />
                 <div className="flex space-x-2">
-                  <TemplateDeleteDialog />
                   <TemplateCreateModal />
+                  <TemplateDeleteDialog />
                 </div>
               </div>
             </div>
