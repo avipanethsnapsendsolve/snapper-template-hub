@@ -13,7 +13,7 @@ interface DetailRowProps {
 function DetailRow({ label, enabled }: DetailRowProps) {
   return (
     <div className="grid grid-cols-3 py-4 border-b border-zinc-100">
-      <div className="text-sm font-medium text-zinc-700 px-4">{label}</div>
+      <div className="text-sm font-medium text-zinc-700 px-4 bg-zinc-100">{label}</div>
       <div className="text-sm text-zinc-700">
         <div className="flex items-center">
           <span className="w-2 h-2 rounded-full bg-green-500 mr-2"></span>
@@ -21,7 +21,7 @@ function DetailRow({ label, enabled }: DetailRowProps) {
         </div>
       </div>
       <div className="flex items-center justify-between px-4">
-        <div className="text-sm font-medium text-zinc-700">Primary colour</div>
+        <div className="text-sm font-medium text-zinc-700 bg-zinc-100 px-2 py-1 rounded-sm">Primary colour</div>
         <div className="flex items-center">
           <span className="w-2 h-2 rounded-full bg-green-500 mr-2"></span>
           <span className="text-sm">Enabled</span>
@@ -69,10 +69,10 @@ export function AuthorityDetails() {
         <div className="space-y-6">
           <section>
             <h2 className="text-lg font-bagoss text-zinc-900 mb-3">Cache</h2>
-            <Card className="border-zinc-200 rounded-md shadow-sm">
+            <Card className="border-zinc-200 rounded-md">
               <CardContent className="p-0">
                 <div className="py-4 px-4 border-b border-zinc-100 flex justify-between items-center">
-                  <div className="text-sm font-medium text-zinc-700">Incident types</div>
+                  <div className="text-sm font-medium text-zinc-700 bg-zinc-100 px-2 py-1 rounded-sm">Incident types</div>
                   <Button 
                     className="bg-orange-500 hover:bg-orange-600 text-black text-sm font-medium rounded-md"
                     size="sm"
@@ -86,7 +86,7 @@ export function AuthorityDetails() {
 
           <section>
             <h2 className="text-lg font-bagoss text-zinc-900 mb-3">Authority detail</h2>
-            <Card className="border-zinc-200 rounded-md shadow-sm">
+            <Card className="border-zinc-200 rounded-md">
               <CardContent className="p-0">
                 {Array.from({ length: 2 }).map((_, i) => (
                   <DetailRow key={i} label="Account type" enabled={true} />
@@ -97,7 +97,7 @@ export function AuthorityDetails() {
 
           <section>
             <h2 className="text-lg font-bagoss text-zinc-900 mb-3">Feature configurations</h2>
-            <Card className="border-zinc-200 rounded-md shadow-sm">
+            <Card className="border-zinc-200 rounded-md">
               <CardContent className="p-0">
                 {Array.from({ length: 6 }).map((_, i) => (
                   <DetailRow key={i} label="Account type" enabled={true} />
@@ -108,7 +108,7 @@ export function AuthorityDetails() {
 
           <section>
             <h2 className="text-lg font-bagoss text-zinc-900 mb-3">Email configurations</h2>
-            <Card className="border-zinc-200 rounded-md shadow-sm">
+            <Card className="border-zinc-200 rounded-md">
               <CardContent className="p-0">
                 {Array.from({ length: 3 }).map((_, i) => (
                   <DetailRow key={i} label="Account type" enabled={true} />
