@@ -1,11 +1,10 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap');
 
-/* Importing Bagoss font - assuming we need to add it via @font-face since it's likely not a Google Font */
+/* Using self-hosted Bagoss font via URL */
 @font-face {
   font-family: 'Bagoss';
-  src: url('/fonts/Bagoss.woff2') format('woff2'),
-       url('/fonts/Bagoss.woff') format('woff');
+  src: url('https://your-domain.com/fonts/Bagoss.woff2') format('woff2'),
+       url('https://your-domain.com/fonts/Bagoss.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
