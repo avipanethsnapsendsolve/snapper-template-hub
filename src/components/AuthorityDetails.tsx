@@ -58,18 +58,16 @@ export function AuthorityDetails() {
             Save
           </Button>
         </div>
-
-        <div className="max-w-screen-xl mx-auto px-4">
-          <div className="flex border-b border-zinc-200">
-            <button className="text-sm font-medium text-zinc-900 px-4 py-2 border-b-2 border-orange-500">Details</button>
-            <button className="text-sm font-medium text-zinc-500 px-4 py-2">Map</button>
-            <button className="text-sm font-medium text-zinc-500 px-4 py-2">Configurations</button>
-            <button className="text-sm font-medium text-zinc-500 px-4 py-2">Triage list</button>
-          </div>
-        </div>
       </div>
 
-      <div className="max-w-screen-xl mx-auto px-4 pt-36 pb-6">
+      <div className="max-w-screen-xl mx-auto px-4 pt-24 pb-6">
+        <div className="flex border-b border-zinc-200 mb-4">
+          <button className="text-sm font-medium text-zinc-900 px-4 py-2 border-b-2 border-orange-500">Details</button>
+          <button className="text-sm font-medium text-zinc-500 px-4 py-2">Map</button>
+          <button className="text-sm font-medium text-zinc-500 px-4 py-2">Configurations</button>
+          <button className="text-sm font-medium text-zinc-500 px-4 py-2">Triage list</button>
+        </div>
+
         <div className="bg-white border border-zinc-200 rounded-lg p-6 space-y-6">
           <section>
             <h2 className="text-lg font-bagoss text-zinc-900 mb-3">Cache</h2>
