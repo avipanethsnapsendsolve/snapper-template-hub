@@ -80,7 +80,7 @@ export function AuthorityDetails() {
                     </div>
                   </div>
                   <Button 
-                    className="bg-orange-500 hover:bg-orange-600 text-white text-sm font-medium rounded-lg mr-4"
+                    className="bg-orange-500 hover:bg-orange-600 text-black text-sm font-medium rounded-lg mr-4"
                     size="sm"
                   >
                     Clear cache
