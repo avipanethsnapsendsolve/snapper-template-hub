@@ -31,8 +31,8 @@ export function TemplateSelector() {
         className="w-64 h-9 px-3 py-2 text-sm rounded border border-zinc-200 focus:ring-orange-500 focus:border-orange-500 shadow-sm bg-white"
       >
         <SelectValue 
-          placeholder="No template selected" 
-          className={!selectedTemplate ? 'text-zinc-200' : 'text-zinc-800'}
+          placeholder={<span className="text-zinc-300">No template selected</span>} 
+          className={selectedTemplate ? 'text-zinc-800' : ''}
         />
       </SelectTrigger>
       <SelectContent 
