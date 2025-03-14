@@ -9,6 +9,7 @@ import {
 import { Info } from "lucide-react";
 import { useTemplates } from "@/contexts/TemplateContext";
 import { dynamicValues } from "@/utils/templateUtils";
+import { Separator } from "@/components/ui/separator";
 
 export function DynamicValueToolbar() {
   const { insertDynamicValue } = useTemplates();
@@ -34,16 +35,20 @@ export function DynamicValueToolbar() {
         </TooltipProvider>
       </div>
       
-      <div className="flex flex-wrap gap-3">
-        {dynamicValues.map((value) => (
-          <button
-            key={value.type}
-            type="button"
-            onClick={() => insertDynamicValue(value.type)}
-            className="text-xs text-black hover:text-zinc-700 transition-colors font-medium"
-          >
-            {value.label}
-          </button>
+      <div className="flex flex-wrap items-center">
+        {dynamicValues.map((value, index) => (
+          <React.Fragment key={value.type}>
+            {index > 0 && (
+              <Separator orientation="vertical" className="mx-3 h-4" />
+            )}
+            <button
+              type="button"
+              onClick={() => insertDynamicValue(value.type)}
+              className="text-xs text-black hover:text-zinc-700 transition-colors font-medium"
+            >
+              {value.label}
+            </button>
+          </React.Fragment>
         ))}
       </div>
     </div>
