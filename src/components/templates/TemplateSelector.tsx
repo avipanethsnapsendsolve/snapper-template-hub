@@ -32,7 +32,7 @@ export function TemplateSelector() {
       >
         <SelectValue 
           placeholder="No template selected" 
-          className="text-zinc-500"
+          className={`${!selectedTemplate ? 'text-zinc-500' : 'text-zinc-800'}`}
         />
       </SelectTrigger>
       <SelectContent 
