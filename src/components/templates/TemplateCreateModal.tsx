@@ -21,6 +21,7 @@ export function TemplateCreateModal() {
   const [name, setName] = useState("");
   const [content, setContent] = useState("");
   const [nameError, setNameError] = useState("");
+  const [contentError, setContentError] = useState("");
   
   const handleOpenChange = (open: boolean) => {
     setOpen(open);
@@ -33,19 +34,54 @@ export function TemplateCreateModal() {
     setName("");
     setContent("");
     setNameError("");
+    setContentError("");
   };
   
   const handleCreate = () => {
-    // Validate
+    let hasError = false;
+    
+    // Validate name
     if (!name.trim()) {
       setNameError("Template name required");
-      return;
+      hasError = true;
+    } else if (name.length > 100) {
+      setNameError("Template name cannot exceed 100 characters");
+      hasError = true;
     }
+    
+    // Validate content
+    if (content.length > 1000) {
+      setContentError("Template message cannot exceed 1000 characters");
+      hasError = true;
+    }
+    
+    if (hasError) return;
     
     // Create template
     createTemplate(name.trim(), content.trim());
     setOpen(false);
     resetForm();
+  };
+
+  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setName(value);
+    if (value.trim()) {
+      setNameError("");
+    }
+    if (value.length > 100) {
+      setNameError("Template name cannot exceed 100 characters");
+    }
+  };
+
+  const handleContentChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const value = e.target.value;
+    setContent(value);
+    if (value.length > 1000) {
+      setContentError("Template message cannot exceed 1000 characters");
+    } else {
+      setContentError("");
+    }
   };
   
   return (
@@ -74,17 +110,16 @@ export function TemplateCreateModal() {
             <Input
               id="name"
               value={name}
-              onChange={(e) => {
-                setName(e.target.value);
-                if (e.target.value.trim()) setNameError("");
-              }}
+              onChange={handleNameChange}
               placeholder="Enter template name"
               className={`border-zinc-200 ${nameError ? "border-destructive" : ""}`}
-              maxLength={100}
             />
             {nameError && (
               <p className="text-destructive text-sm">{nameError}</p>
             )}
+            <p className="text-xs text-zinc-500 text-right">
+              {name.length}/100 characters
+            </p>
           </div>
           
           <div className="space-y-2">
@@ -92,14 +127,18 @@ export function TemplateCreateModal() {
             <Textarea
               id="content"
               value={content}
-              onChange={(e) => setContent(e.target.value)}
+              onChange={handleContentChange}
               placeholder="Enter template content"
-              className="min-h-[150px] resize-y border-zinc-200"
-              maxLength={1000}
+              className={`min-h-[150px] resize-y border-zinc-200 ${contentError ? "border-destructive" : ""}`}
             />
-            <p className="text-xs text-zinc-500 text-right">
-              {content.length}/1000 characters
-            </p>
+            <div className="flex justify-between items-center">
+              {contentError && (
+                <p className="text-destructive text-sm">{contentError}</p>
+              )}
+              <p className={`text-xs ${content.length > 1000 ? "text-destructive" : "text-zinc-500"} ml-auto`}>
+                {content.length}/1000 characters
+              </p>
+            </div>
           </div>
         </div>
         <DialogFooter>

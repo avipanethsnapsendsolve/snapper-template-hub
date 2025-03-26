@@ -22,8 +22,10 @@ interface TemplateContextType {
   createTemplate: (name: string, content: string) => void;
   updateTemplate: (templateId: string, updates: Partial<MessageTemplate>) => void;
   deleteTemplate: (templateId: string) => void;
-  saveTemplate: () => void;
+  saveTemplate: () => boolean;
   isDirty: boolean;
+  hasError: boolean;
+  setContentError: (hasError: boolean) => void;
   insertDynamicValue: (valueType: DynamicValueType) => void;
   textAreaRef: React.RefObject<HTMLTextAreaElement>;
 }
@@ -35,6 +37,7 @@ export function TemplateProvider({ children }: { children: React.ReactNode }) {
   const [selectedTemplate, setSelectedTemplate] = useState<MessageTemplate | null>(null);
   const [selectedTemplateContent, setSelectedTemplateContent] = useState<string>("");
   const [isDirty, setIsDirty] = useState(false);
+  const [hasError, setHasError] = useState(false);
   const [templateHistory, setTemplateHistory] = useState<TemplateHistoryEntry[]>([]);
   const textAreaRef = React.useRef<HTMLTextAreaElement>(null);
   const { toast } = useToast();
@@ -44,9 +47,11 @@ export function TemplateProvider({ children }: { children: React.ReactNode }) {
     if (selectedTemplate) {
       setSelectedTemplateContent(selectedTemplate.content);
       setIsDirty(false);
+      setHasError(false);
     } else {
       setSelectedTemplateContent("");
       setIsDirty(false);
+      setHasError(false);
     }
   }, [selectedTemplate]);
 
@@ -55,11 +60,34 @@ export function TemplateProvider({ children }: { children: React.ReactNode }) {
     setIsDirty(content !== (selectedTemplate?.content || ""));
   };
 
+  const setContentError = (hasError: boolean) => {
+    setHasError(hasError);
+  };
+
   const createTemplate = (name: string, content: string) => {
+    if (name.length > 100) {
+      toast({
+        title: "Error",
+        description: "Template name cannot exceed 100 characters.",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    if (content.length > 1000) {
+      toast({
+        title: "Error",
+        description: "Template message cannot exceed 1000 characters.",
+        variant: "destructive"
+      });
+      return;
+    }
+
     const newTemplate = createTemplateUtil(name, content, "Current User");
     setTemplates([...templates, newTemplate]);
     setSelectedTemplate(newTemplate);
     setIsDirty(false);
+    setHasError(false);
     
     toast({
       title: "Template created",
@@ -69,6 +97,26 @@ export function TemplateProvider({ children }: { children: React.ReactNode }) {
   };
 
   const updateTemplate = (templateId: string, updates: Partial<MessageTemplate>) => {
+    // Validate content length if updating content
+    if (updates.content && updates.content.length > 1000) {
+      toast({
+        title: "Error",
+        description: "Template message cannot exceed 1000 characters.",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    // Validate name length if updating name
+    if (updates.name && updates.name.length > 100) {
+      toast({
+        title: "Error",
+        description: "Template name cannot exceed 100 characters.",
+        variant: "destructive"
+      });
+      return;
+    }
+
     const templateIndex = templates.findIndex(t => t.id === templateId);
     if (templateIndex >= 0) {
       const updatedTemplate = updateTemplateUtil(
@@ -96,18 +144,30 @@ export function TemplateProvider({ children }: { children: React.ReactNode }) {
       }
       
       setIsDirty(false);
+      setHasError(false);
     }
   };
 
   const saveTemplate = () => {
     if (selectedTemplate && isDirty) {
+      if (selectedTemplateContent.length > 1000) {
+        toast({
+          title: "Message too long",
+          description: "Template message cannot exceed 1000 characters.",
+          variant: "destructive"
+        });
+        return false;
+      }
+
       updateTemplate(selectedTemplate.id, { content: selectedTemplateContent });
       toast({
         title: "Template saved",
         description: `"${selectedTemplate.name}" has been updated successfully.`,
         variant: "default"
       });
+      return true;
     }
+    return false;
   };
 
   const deleteTemplate = (templateId: string) => {
@@ -173,6 +233,8 @@ export function TemplateProvider({ children }: { children: React.ReactNode }) {
     deleteTemplate,
     saveTemplate,
     isDirty,
+    hasError,
+    setContentError,
     insertDynamicValue,
     textAreaRef
   };

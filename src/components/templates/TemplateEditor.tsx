@@ -13,14 +13,17 @@ export function TemplateEditor({ maxLength = 1000 }: TemplateEditorProps) {
     selectedTemplate, 
     selectedTemplateContent, 
     updateSelectedTemplateContent,
-    textAreaRef
+    textAreaRef,
+    hasError,
+    setContentError
   } = useTemplates();
   
   const [charCount, setCharCount] = useState(0);
   
   useEffect(() => {
     setCharCount(selectedTemplateContent.length);
-  }, [selectedTemplateContent]);
+    setContentError(selectedTemplateContent.length > maxLength);
+  }, [selectedTemplateContent, maxLength, setContentError]);
   
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     updateSelectedTemplateContent(e.target.value);
@@ -28,7 +31,7 @@ export function TemplateEditor({ maxLength = 1000 }: TemplateEditorProps) {
   };
 
   const getCharCountClassname = () => {
-    if (charCount >= maxLength) return "text-destructive font-medium";
+    if (charCount > maxLength) return "text-destructive font-medium";
     if (charCount >= maxLength * 0.9) return "text-amber-500 font-medium";
     return "text-zinc-400";
   };
@@ -48,8 +51,9 @@ export function TemplateEditor({ maxLength = 1000 }: TemplateEditorProps) {
             !selectedTemplate ? 'bg-zinc-50 text-zinc-400' : 'bg-white'
           } ${
             selectedTemplate ? 'focus-visible:ring-orange-500 focus-visible:border-orange-500' : ''
+          } ${
+            hasError ? 'border-destructive focus-visible:border-destructive focus-visible:ring-destructive' : ''
           }`}
-          maxLength={maxLength}
         />
         
         <div className="absolute bottom-2 right-3">
