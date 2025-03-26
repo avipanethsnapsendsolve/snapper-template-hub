@@ -1,7 +1,6 @@
 
-import React, { useState } from "react";
+import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { TemplateSelector } from "./TemplateSelector";
 import { TemplateEditor } from "./TemplateEditor";
 import { TemplateCreateModal } from "./TemplateCreateModal";
@@ -38,7 +37,7 @@ export function TemplateManager() {
       <CardContent className="p-0">
         <div className="grid grid-cols-12 gap-0">
           <div className="col-span-3 border-r border-zinc-100 bg-zinc-50 p-4">
-            <div className="flex items-center mb-4">
+            <div className="flex items-center">
               <div className="text-sm font-medium text-zinc-700 mr-1">Template editor</div>
               <TooltipProvider>
                 <Tooltip>
@@ -53,16 +52,6 @@ export function TemplateManager() {
                 </Tooltip>
               </TooltipProvider>
             </div>
-            
-            {isDirty && selectedTemplate && (
-              <Button 
-                onClick={handleSave}
-                className="w-full bg-orange-500 hover:bg-orange-600 text-black text-sm mt-4"
-                size="sm"
-              >
-                Save changes
-              </Button>
-            )}
           </div>
           
           <div className="col-span-9 p-4">
